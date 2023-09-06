@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<title>Add Edit Account</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Include styles -->
+<th:block th:include="fragments/head :: styles"></th:block>
+
+<head>
+    <!-- Head content -->
+</head>
+<body>
+<!--  header -->
+<div th:insert="/fragments/header :: header"></div>
+<form action="#" class="offset-md-1 w-75" th:action="@{/addAccount}" method="post" th:object="${movies}">
+
+    <div class="mb-3">
+        <label class="form-label">Movie</label>
+        <input type="text" class="form-control" th:field="*{movie}" placeholder="Movie"/>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+<!--        <input type="text" class="form-control" th:field="*{description}" placeholder="Description"/>-->
+
+        <textarea th:field="*{description}" class="form-control" rows="4" cols="50">Description
+         </textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Audio</label>
+        <input type="text" class="form-control" th:field="*{audio}" placeholder="Audio"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Subtitle</label>
+        <input type="text" class="form-control" th:field="*{subtitle}" placeholder="Subtitle"/>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Rating</label>
+        <input type="number" class="form-control" th:field="*{rating}" placeholder="Rating"/>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">URL</label>
+        <input type="text" class="form-control" th:field="*{url}" placeholder="URL"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Genres</label>
+        <select class="form-select" th:field="*{genre}" required>
+            <option value="Action" th:selected="${movies.genre == 'Action'}">Action</option>
+            <option value="Drama" th:selected="${movies.genre == 'Drama'}">Drama</option>
+            <option value="Horror" th:selected="${movies.genre == 'Horror'}">Horror</option>
+            <option value="Western" th:selected="${movies.genre == 'Western'}">Western</option>
+            <option value="Comedy" th:selected="${movies.genre == 'Comedy'}">Comedy</option>
+            <option value="Crime" th:selected="${movies.genre == 'Crime'}">Crime</option>
+            <option value="Fantasy" th:selected="${movies.genre == 'Fantasy'}">Fantasy</option>
+        </select>
+    </div>
+
+    <button value="submit" type="submit"
+            class="mt-5 px-5 btn btn-primary position-absolute top-25 start-50 translate-middle">
+        Submit
+    </button>
+
+    <input type="hidden" class="form-control" th:field="*{id}" id="id"/>
+
+</form>
+<div th:insert="/fragments/footer :: footer"></div>
+
+<!-- Include scripts -->
+<th:block th:include="fragments/head :: scripts"></th:block>
+</body>
+</html>

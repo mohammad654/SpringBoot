@@ -1,0 +1,30 @@
+<!-- speakers.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Speakers</title>
+</head>
+<body>
+<h1>Speakers</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Speaker ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Title</th>
+        <th>Company</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="speaker : ${speakers}">
+        <td th:text="${speaker.speaker_id}"></td>
+        <td th:text="${speaker.first_name}"></td>
+        <td th:text="${speaker.last_name}"></td>
+        <td th:text="${speaker.title}"></td>
+        <td th:text="${speaker.company}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

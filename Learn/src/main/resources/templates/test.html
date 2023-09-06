@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta th:include="fragments/head :: metas" th:remove="tag"/>
+    <title>Test</title>
+    <!--CSS-->
+    <style th:include="fragments/head :: styles" th:remove="tag"/>
+    <!--JS-->
+    <script th:include="fragments/head :: scripts" th:remove="tag"/>
+    <!--Test-->
+    <script src="/js/test.js"></script>
+</head>
+<body>
+<!--header-->
+<div th:insert="/fragments/header :: header"></div>
+<!--container-->
+<h1 class="text-center">Test</h1>
+<!--footer-->
+<!--<div th:insert="/fragments/footer :: footer">-->
+</div>
+</body>
+</html>

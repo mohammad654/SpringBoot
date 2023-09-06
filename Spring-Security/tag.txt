@@ -1,0 +1,6 @@
+
+Authentication : who is the user ?
+Authorization : Are they allowed to do certain things
+Principal : currently logged-in user
+Granted Authority : way of providing Authorization.
+Roles : Group of authority.

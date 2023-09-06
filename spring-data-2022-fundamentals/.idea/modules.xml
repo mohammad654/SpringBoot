@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/spring-data-2022-fundamentals.iml" filepath="$PROJECT_DIR$/.idea/spring-data-2022-fundamentals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02/demos/springdata/springdata.iml" filepath="$PROJECT_DIR$/02/demos/springdata/springdata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03/demos/springdata/springdata (1).iml" filepath="$PROJECT_DIR$/03/demos/springdata/springdata (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/04/demos/springdata/springdata (2).iml" filepath="$PROJECT_DIR$/04/demos/springdata/springdata (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/05/demos/springdata/springdata (3).iml" filepath="$PROJECT_DIR$/05/demos/springdata/springdata (3).iml" />
+    </modules>
+  </component>
+</project>

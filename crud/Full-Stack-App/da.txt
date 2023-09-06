@@ -1,0 +1,91 @@
+
+
+CREATE TABLE tables (
+  tableId integer PRIMARY KEY,
+  tableNumber integer,
+  seat integer,
+  isMergeable boolean,
+  isAvailable boolean
+);
+
+
+
+CREATE TABLE orders (
+  orderId integer PRIMARY KEY,
+  customerId integer,
+  menuItemId integer,
+  orderDate date,
+  orderTime datetime
+);
+
+CREATE TABLE menuItem (
+  menuItemId integer PRIMARY KEY,
+  itemName varchar(255),
+  type varchar(255),
+  description varchar(255),
+  price double,
+  isAlcoholic boolean,
+  imagePath varchar(255)
+);
+
+CREATE TABLE paymentMethod (
+  paymentId bigint PRIMARY KEY AUTO_INCREMENT,
+  description varchar(255)
+);
+CREATE TABLE reservation (
+  reservationId bigint PRIMARY KEY,
+  customerId integer,
+  tableId integer,
+  startTime DATETIME,
+  startDate DATE,
+  addBabyChair boolean
+);
+x
+INSERT INTO tables (tableNumber, seat, isMergeable, isAvailable)
+VALUES
+(100, 2, true, true),
+(101, 2, true, true),
+(102, 2, true, true),
+(103, 2, true, true),
+(104, 4, true, true),
+(105, 4, true, true),
+(106, 4, true, true),
+(107, 4, true, true),
+(108, 4, true, true),
+(109, 4, true, true),
+(110, 4, true, true),
+(111, 4, true, true),
+(112, 4, true, true),
+(113, 4, true, true),
+(114, 4, true, true),
+(115, 4, true, true),
+(116, 6, false, true),
+(117, 6, false, true),
+(118, 6, false, true),
+(119, 4, false, true),
+(120, 6, false, true),
+(121, 6, false, true),
+(122, 6, false, true);
+
+INSERT INTO menuItem (menuItemId, itemName, type, description, price, isAlcoholic, imagePath)
+VALUES (1, 'Classic Margherita Pizza', 'Pizza', 'Tomato sauce, mozzarella cheese, and basil leaves', 10.99, false, '/images/margherita.jpg');
+INSERT INTO menuItem (menuItemId, itemName, type, description, price, isAlcoholic, imagePath)
+VALUES (2, 'Chicken Alfredo Pasta', 'Pasta', 'Fettuccine pasta in a creamy Alfredo sauce with grilled chicken', 13.99, false, '/images/chicken-alfredo.jpg');
+INSERT INTO menuItem (menuItemId, itemName, type, description, price, isAlcoholic, imagePath)
+VALUES (3, 'Grilled Salmon', 'Seafood', 'Grilled Atlantic salmon fillet with lemon butter sauce, served with roasted vegetables and mashed potatoes', 18.99, false, '/images/grilled-salmon.jpg');
+INSERT INTO menuItem (menuItemId, itemName, type, description, price, isAlcoholic, imagePath)
+VALUES (4, 'Mojito', 'Cocktail', 'A classic Cuban cocktail made with fresh mint, lime juice, sugar, and white rum', 8.99, true, '/images/mojito.jpg');
+INSERT INTO menuItem (menuItemId, itemName, type, description, price, isAlcoholic, imagePath)
+VALUES (5, 'Tiramisu', 'Dessert', 'Layers of ladyfingers soaked in espresso and Marsala wine, with mascarpone cheese and cocoa powder', 6.99, false, '/images/tiramisu.jpg');
+
+INSERT INTO paymentMethod (paymentId, description) VALUES (1, 'credit card');
+INSERT INTO paymentMethod (paymentId, description) VALUES (2, 'Alipay');
+INSERT INTO paymentMethod (paymentId, description) VALUES (3, 'cash');
+
+INSERT INTO reservation (reservationId, customerId, tableId, startTime, startDate, addBabyChair)
+VALUES (1, 123, 4, '2023-05-01 18:30:00', '2023-05-01', false);
+INSERT INTO reservation (reservationId, customerId, tableId, startTime, startDate, addBabyChair)
+VALUES (2, 456, 2, '2023-05-02 19:00:00', '2023-05-02', false);
+INSERT INTO reservation (reservationId, customerId, tableId, startTime, startDate, addBabyChair)
+VALUES (3, 789, 6, '2023-05-03 20:30:00', '2023-05-03', false);
+

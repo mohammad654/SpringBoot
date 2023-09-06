@@ -1,0 +1,15 @@
+
+-- Insert demo data
+--INSERT INTO users (username, password, enabled) VALUES ('admin', 'admin123', true);
+--INSERT INTO users (username, password, enabled) VALUES ('user', 'user123', true);
+--INSERT INTO users (username, password, enabled) VALUES ('john', 'john123', true);
+--INSERT INTO users (username, password, enabled) VALUES ('jane', 'jane123', true);
+--INSERT INTO users (username, password, enabled) VALUES ('test', 'test123', true);
+--
+--
+---- Insert demo data
+--INSERT INTO authorities (username, authority) VALUES ('admin', 'ROLE_ADMIN');
+--INSERT INTO authorities (username, authority) VALUES ('user', 'ROLE_USER');
+--INSERT INTO authorities (username, authority) VALUES ('john', 'ROLE_USER');
+--INSERT INTO authorities (username, authority) VALUES ('jane', 'ROLE_USER');
+--INSERT INTO authorities (username, authority) VALUES ('test', 'ROLE_USER');

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<title>Add Edit Account</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Include styles -->
+<th:block th:include="fragments/head :: styles"></th:block>
+
+<head>
+    <!-- Head content -->
+</head>
+<body>
+<!--  header -->
+<div th:insert="/fragments/header :: header"></div>
+<form action="#" class="offset-md-1" th:action="@{/addAccount}" method="post" th:object="${account}">
+
+    <div class="mb-3">
+        <label class="form-label">First Name</label>
+        <input type="text" class="form-control" th:field="*{firstName}" placeholder="First Name"/>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Last Name</label>
+        <input type="text" class="form-control" th:field="*{lastName}" placeholder="Last Name"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Phone Number</label>
+        <input type="text" class="form-control" th:field="*{phoneNumber}" placeholder="Phone Number"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" th:field="*{email}" placeholder="Email"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="text" class="form-control" th:field="*{password}" placeholder="Password"/>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Role</label>
+        <select class="form-select" th:field="*{role}" required>
+            <option value="admin" th:selected="${account.role == 'admin'}">Admin</option>
+            <option value="super admin" th:selected="${account.role == 'super admin'}">Super Admin</option>
+            <option value="user" th:selected="${account.role == 'user'}">User</option>
+        </select>
+    </div>
+
+    <button value="submit" type="submit"
+            class="mt-5 px-5 btn btn-primary position-absolute top-25 start-50 translate-middle">
+        Submit
+    </button>
+
+    <input type="hidden" class="form-control" th:field="*{id}" id="id"/>
+
+</form>
+<div th:insert="/fragments/footer :: footer"></div>
+
+<!-- Include scripts -->
+<th:block th:include="fragments/head :: scripts"></th:block>
+</body>
+</html>

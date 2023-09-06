@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Data</title>
+</head>
+<body>
+<h1>Test Data</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="test : ${tests}">
+        <td th:text="${test.id}"></td>
+        <td th:text="${test.description}"></td>
+        <td>
+            <a th:href="@{/test/{id}/info(id=${test.id})}">View1</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
